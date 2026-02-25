@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --color-background: var(--theme-background);
+  --color-card: var(--theme-card);
+  --color-primary-start: var(--theme-primary-start);
+  --color-primary-end: var(--theme-primary-end);
+  --color-text: var(--theme-text);
+  --color-text-secondary: var(--theme-text-secondary);
+  --color-border: var(--theme-border);
+  --color-sidebar-border: var(--theme-sidebar-border);
+  --color-hover: var(--theme-hover);
+  --font-sans: Inter, sans-serif;
+}
+
+@layer base {
+  :root {
+    /* Light Theme (Default) */
+    --theme-background: #F8FAFC;
+    --theme-card: #FFFFFF;
+    --theme-text: #000000;
+    /* Full black for visibility */
+    --theme-text-secondary: #475569;
+    --theme-text-muted: #94A3B8;
+    --theme-border: #E2E8F0;
+    --theme-sidebar-border: #E2E8F0;
+    --theme-primary-start: #6366F1;
+    --theme-primary-end: #8B5CF6;
+    --theme-heading-gradient: linear-gradient(to right, #1E293B, #64748B);
+    --theme-hover: #F1F5F9;
+  }
+
+  .dark {
+    /* Dark Theme (Cyberpunk) */
+    --theme-background: #0B1220;
+    --theme-card: #111827;
+    --theme-text: #F8FAFC;
+    --theme-text-secondary: #94A3B8;
+    --theme-text-muted: #64748B;
+    --theme-border: #1F2937;
+    --theme-sidebar-border: #1F2937;
+    --theme-primary-start: #6366F1;
+    --theme-primary-end: #8B5CF6;
+    --theme-heading-gradient: linear-gradient(to right, #FFFFFF, #94A3B8);
+    --theme-hover: #1F2937;
+  }
+
+  html {
+    font-family: 'Inter', sans-serif;
+  }
+
+  body {
+    background-color: var(--theme-background);
+    color: var(--theme-text);
+    min-height: 100vh;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--theme-background);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--theme-card);
+  border-radius: 9999px;
+}
+
+@layer utilities {
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+
+  .transform-style-3d {
+    transform-style: preserve-3d;
+  }
+
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+
+  .rotate-y-180 {
+    transform: rotateY(180deg);
+  }
+}
